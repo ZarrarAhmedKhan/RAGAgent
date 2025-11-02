@@ -4,7 +4,7 @@ import os
 
 def initialize_groq_client():
     # Get the absolute path to the .env file
-    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.env')
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '.env')
     
     # Load environment variables from .env file
     load_dotenv(dotenv_path=env_path, override=True)
@@ -38,9 +38,3 @@ def chat_with_groq(message, model="llama-3.3-70b-versatile"):
         ]
     )
     return completion.choices[0].message.content
-
-# Example usage
-if __name__ == "__main__":
-    message = "What is the capital of France?"
-    response = chat_with_groq(message)
-    print("AI Response:", response)
