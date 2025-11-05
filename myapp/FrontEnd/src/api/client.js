@@ -1,5 +1,7 @@
 // src/api/client.js
-const API_BASE_URL = "http://localhost:8000"; // 🔗 Replace with your actual Render URL
+const API_BASE_URL = import.meta.env.MODE === 'development' 
+  ? import.meta.env.VITE_LOCAL_API_URL 
+  : import.meta.env.VITE_PRODUCTION_API_URL;
 
 export async function sendMessageToBackend(message) {
   try {
