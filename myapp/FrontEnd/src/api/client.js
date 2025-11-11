@@ -1,8 +1,7 @@
 // src/api/client.js
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://ragagent-6005.onrender.com';
+const API_BASE_URL = import.meta.env.VITE_API_URL;
 // Debug all environment variables
-console.log('All env variables:', import.meta.env);
-console.log('API URL:', API_BASE_URL); // Debug log
+// console.log('API URL:', API_BASE_URL); // Debug log
 
 export async function sendMessageToBackend(message) {
   try {
