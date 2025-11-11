@@ -8,10 +8,14 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all origins
+    allow_origins=[
+        "http://localhost:5173",
+        "https://rag-agent-frontend-xi.vercel.app",
+        "https://rag-agent-frontend-git-main-zarrarahmedkhans-projects.vercel.app"
+    ],
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods
-    allow_headers=["*"],  # Allows all headers
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 class Message(BaseModel):
